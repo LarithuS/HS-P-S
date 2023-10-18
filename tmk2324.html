@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>TMK Kaptanlık Seçimleri</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="tmk2324.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const form = document.getElementById("voting-form");
+			const submitButton = document.getElementById("submit");
+			const resetButton = document.getElementById("reset");
+			const selectionCounter = document.getElementById("selection-counter");
+			const popup = document.getElementById("popup");
+			const popupClose = document.getElementById("popup-close");
+
+			form.addEventListener("submit", function (event) {
+				event.preventDefault();
+
+				const checkboxes = document.querySelectorAll(".hidden-checkbox:checked");
+				const selectedCount = checkboxes.length;
+
+				if (selectedCount !== 6) {
+					alert("Lütfen 6 Aday Seçiniz");
+				} else {
+					popup.style.display = "block";
+					resetCheckboxes();
+				}
+			});
+
+			popupClose.addEventListener("click", function () {
+				popup.style.display = "none";
+				location.reload();
+			});
+
+			resetButton.addEventListener("click", function () {
+				resetCheckboxes();
+				selectionCounter.textContent = " Seçilen Aday Sayısı: 0/6 ";
+				selectionCounter.style.color = "black";
+			});
+
+			form.addEventListener("change", function () {
+				const checkboxes = document.querySelectorAll(".hidden-checkbox:checked");
+				const selectedCount = checkboxes.length;
+
+				selectionCounter.textContent = `Seçilen Aday Sayısı: ${selectedCount}/6`;
+
+				if (selectedCount === 6) {
+					selectionCounter.style.color = "#4B4CA3";
+				} else {
+					selectionCounter.style.color = "black";
+				}
+			});
+
+			function resetCheckboxes() {
+				const checkboxes = document.querySelectorAll(".hidden-checkbox");
+
+				checkboxes.forEach(function (checkbox) {
+					checkbox.checked = false;
+				});
+			}
+		});
+
+	</script>
+
+</head>
+
+<body>
+	<div class="header">
+		<h3>Lefkoşa Türk Maarif Kolleji 2023-2024 Kaptanlık Seçimleri</h3>
+		<img class="bgimage opacity-75 my-5"
+			src="https://upload.wikimedia.org/wikipedia/en/thumb/7/73/Türk_Maarif_Koleji.svg/640px-Türk_Maarif_Koleji.svg.png">
+	</div>
+	<div class="main" class="container text-center">
+		<form id="voting-form">
+			<div class="d-flex justify-content-evenly mt-4 mb-4">
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Ada Olsun</h5>
+						<p class="card-text"> Imperial</p> <img class="card-text smallimg" src="files\imperial.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="AdaOlsun" class="hidden-checkbox"
+								value="AdaOlsun" />
+							<label for="AdaOlsun" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Arda Arsun</h5>
+						<p class="card-text">Imperial</p><img class="card-text smallimg" src="files\imperial.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="ArdaArsun" class="hidden-checkbox"
+								value="ArdaArsun" />
+							<label for="ArdaArsun" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Batu Yücel</h5>
+						<p class="card-text">Samba</p><img class="smallimg" src="files\samba.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="BatuYücel" class="hidden-checkbox"
+								value="BatuYücel" />
+							<label for="BatuYücel" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Ege Özada</h5>
+						<p class="card-text">Samba</p><img class="card-text smallimg" src="files\samba.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="EgeÖzada" class="hidden-checkbox"
+								value="EgeÖzada" />
+							<label for="EgeÖzada" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Hanife</h5>
+						<p class="card-text">Samba</p><img class="card-text smallimg" src="files\samba.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="Hanife" class="hidden-checkbox"
+								value="Hanife" />
+							<label for="Hanife" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="d-flex justify-content-evenly mb-5">
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Efe Havalı</h5>
+						<p class="card-text">Vamos</p><img class="card-text smallimg" src="files\vamos.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="EfeHavalı" class="hidden-checkbox"
+								value="EfeHavalı" />
+							<label for="EfeHavalı" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div id="dkcbody" class="card-body">
+						<h5 class="card-title">Demir Kanıt Cemaller</h5>
+						<p class="card-text">The Blaze</p><img class="card-text smallimg" src="files\the blaze.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="DemirKanıtCemaller" class="hidden-checkbox"
+								value="DemirKanıtCemaller" />
+							<label for="DemirKanıtCemaller" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Naz Eylen</h5>
+						<p class="card-text">The Blaze</p><img class="card-text smallimg" src="files\the blaze.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="NazEylen" class="hidden-checkbox"
+								value="NazEylen" />
+							<label for="NazEylen" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">İrcem Tehdit</h5>
+						<p class="card-text">Fiesta</p><img class="card-text smallimg" src="files\fiesta.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="İrcemTehdit" class="hidden-checkbox"
+								value="İrcemTehdit" />
+							<label for="İrcemTehdit" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Nehir Çelebi</h5>
+						<p class="card-text">Fiesta</p><img class="card-text smallimg" src="files\fiesta.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="NehirÇelebi" class="hidden-checkbox"
+								value="NehirÇelebi" />
+							<label for="NehirÇelebi" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="d-flex justify-content-evenly mb-5">
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">İrem Ulu</h5>
+						<p class="card-text">Urban</p><img class="card-text smallimg" src="files\urban.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="İremUlu" class="hidden-checkbox"
+								value="İremUlu" />
+							<label for="İremUlu" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Süleyman</h5>
+						<p class="card-text">Urban</p><img class="card-text smallimg" src="files\urban.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="Süleyman" class="hidden-checkbox"
+								value="Süleyman" />
+							<label for="Süleyman" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Nil Türer</h5>
+						<p class="card-text">Bağımsız Aday</p><img class="card-text smallimg" src="files\nilo.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="NilTürer" class="hidden-checkbox"
+								value="NilTürer" />
+							<label for="NilTürer" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Lal Mindikoğlu</h5>
+						<p class="card-text">Enerci</p><img class="card-text smallimg" src="files\enerci.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="LalMindikoğlu" class="hidden-checkbox"
+								value="LalMindikoğlu" />
+							<label for="LalMindikoğlu" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+				<div class="card" style="width: 14rem; height: 23rem;">
+					<img src="files\Anonymous-Profile-pic.jpg" class="card-img-top" alt="Aday">
+					<div class="card-body">
+						<h5 class="card-title">Şerife Aylanç</h5>
+						<p class="card-text">Enerci</p><img class="card-text smallimg" src="files\enerci.jpg">
+						<div class="form-check">
+							<input type="checkbox" name="candidate" id="ŞerifeAylanç" class="hidden-checkbox"
+								value="ŞerifeAylanç" />
+							<label for="ŞerifeAylanç" class="vote-button"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="counter-and-buttons">
+				<span id="selection-counter">Seçilen Aday Sayısı: 0/6</span>
+				<input class="btn btn-primary mb-2" type="submit" value="Gönder" id="submit">
+				<input class="btn btn-secondary" type="reset" value="Sıfırla" id="reset">
+			</div>
+		</form>
+	</div>
+	<div class="footer">
+		<h6>2023-2024 TMK 11-IT students</h6>
+	</div>
+	<div id="popup" class="popup">
+		<div class="popup-content">
+			<span class="close" id="popup-close">&times;</span>
+			<h2>Oyunuz Alınmıştır</h2>
+			<p>Lütfen Sıradaki Seçmene Yer Veriniz.</p>
+		</div>
+	</div>
+</body>
+
+</html>

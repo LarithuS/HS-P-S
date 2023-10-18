@@ -1,0 +1,173 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    font-size: 12px;
+    user-select: none;
+}
+
+.header {
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+    background-color:#4B4CA3;
+    height: 30px;
+    text-align: center;
+    color: white;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.footer {
+    width: 100%;
+    height: 30px;
+    display: block;
+    margin-top: 10px;
+    background-color:#4B4CA3;
+}
+
+.smallimg {
+    width: 30%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    position: relative;
+    top: -5rem;
+    left: 9rem;
+}
+
+.counter-and-buttons {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+#selection-counter {
+    margin: 0 0 10px;
+}
+  
+#submit, #reset {
+    flex: 0 0 auto;
+}
+
+
+h6{
+    text-align: right;
+    opacity:0.5;
+    padding-right:15px;
+    padding-top: 7px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#6c6eff;
+    z-index: 1;
+    text-align: center;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#popup-close {
+    position: absolute;
+    top: 1px;
+    right: 6px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-primary{
+    background-color:#4B4CA3 !important;
+    border: none !important;
+    color:#fff;
+}
+.btn-secondary{
+    background-color:#fff !important;
+    border: 1px solid #4B4CA3 !important;
+    color:#4B4CA3 !important;
+}
+
+#flexCheckDefault, .form-check-input{
+    height: 30px;
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #4B4CA3 ;
+    padding: auto;
+    position: relative;
+    top: -5rem;
+}
+
+.form-check-input:hover{
+    cursor: pointer;
+}
+
+#dkcbody{
+    position: relative;
+    top: -1rem;
+}
+.hidden-checkbox {
+    display: none;
+}
+  
+.vote-button {
+    background-color: white;
+    color: #4B4CA3;
+    border: 1px solid #4B4CA3;
+    padding: 18px 60px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative; 
+    display: inline-block;
+    top:-5rem;
+}
+  
+.vote-button::before {
+  content: 'Oyla';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.hidden-checkbox:checked + .vote-button::before {
+    content: '';
+}
+  
+.hidden-checkbox:checked + .vote-button::after {
+    content: 'Oy Verildi';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.hidden-checkbox:checked + .vote-button {
+    background-color: #4B4CA3;
+    color: white;
+}
+
